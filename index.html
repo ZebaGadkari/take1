@@ -1,0 +1,522 @@
+<html lang="en"><head>
+
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+<link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+
+
+
+
+
+
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+  <title>CodePen - Simple JavaScript Quiz With Pagination</title>
+  
+  
+  
+  
+<style>
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:300,600);
+
+body{
+  font-size: 20px;
+  font-family: 'Work Sans', sans-serif;
+  color: #333;
+  font-weight: 300;
+  text-align: center;
+
+}
+h1{
+  font-weight: 300;
+  margin: 0px;
+  padding: 10px;
+  font-size: 20px;
+  background-color: #444;
+  color: #fff;
+}
+.question{
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.answers {
+  margin-bottom: 20px;
+  text-align: left;
+  display: inline-block;
+}
+.answers label{
+  display: block;
+  margin-bottom: 10px;
+}
+button{
+  font-family: 'Work Sans', sans-serif;
+  font-size: 22px;
+  background-color: #279;
+  color: #fff;
+  border: 0px;
+  border-radius: 3px;
+  padding: 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+button:hover{
+  background-color: #38a;
+}
+
+
+
+
+
+.slide{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.active-slide{
+  opacity: 1;
+  z-index: 2;
+}
+.quiz-container{
+  position: relative;
+  height: 200px;
+  margin-top: 40px;
+}
+</style>
+
+  
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no">
+
+
+
+<div class="container mt-3">
+
+            
+  <table class="table table-bordered">
+    <thead>
+
+      <tr>
+        <th rowspan="2">Slide Title</th>
+
+        <td rowspan="2">Post-test questionnaire</td>
+      
+      
+        <th>Slide No</th> 
+        <td >12</td></tr>
+        
+
+      <tr> 
+    
+        <th>Slide Type</th>
+        <td>Animation - Text and Images</td>
+      </tr>
+
+
+      
+<tr>
+        <th colspan="2">On Screen Test</th>
+          <th colspan="2">Graphics and Programming Instructions</th>
+
+
+
+</tr>
+  </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
+  
+<div class="quiz-container">
+  <div id="quiz"><div class="slide active-slide">
+            <div class="question">1. Teamwork requires co-operation and co-ordination. Which behaviour enables the other behaviours?  </div>
+            <div class="answers"> <label>
+              <input type="radio" name="question0" value="a">
+              a :
+              Communication
+            </label><label>
+              <input type="radio" name="question0" value="b">
+              b :
+              Co-operation
+            </label><label>
+              <input type="radio" name="question0" value="c">
+              c :
+              Co-ordination
+            </label>
+
+            <label>
+              <input type="radio" name="question2" value="d">
+               d:
+              None of the above
+            </label>
+
+             </div>
+          </div><div class="slide">
+            <div class="question"> 2.If team members share a mental model, then: </div>
+            <div class="answers"> <label>
+              <input type="radio" name="question1" value="a">
+              a :
+             They have different perceptions of what is going on around them 
+            </label><label>
+              <input type="radio" name="question1" value="b">
+              b :
+               They have different views on what is required to manage the situation 
+            </label><label>
+              <input type="radio" name="question1" value="c">
+              c :
+              They have the same views on what is required to manage the situation 
+            </label>
+
+<label>
+              <input type="radio" name="question2" value="d">
+              d :
+              Serious safety events are more likely
+            </label>
+             </div>
+          </div>
+
+
+
+
+
+          <div class="slide">
+            <div class="question">3. Which statement is false? </div>
+            <div class="answers"> <label>
+              <input type="radio" name="question2" value="a">
+              a :
+                 Mutual support involves trust in other team members and confidence in their actions 
+            </label><label>
+              <input type="radio" name="question2" value="b">
+              b :
+                 Situation monitoring involves adjusting, adapting, and reallocating tasks and responsibilities as required 
+            </label><label>
+              <input type="radio" name="question2" value="c">
+              c :
+                  Effective communication should use subjective language 
+            </label><label>
+              <input type="radio" name="question2" value="d">
+              d :
+                  Leadership in effective teamwork involves communicating team roles and responsibilities
+            </label> </div>
+          </div>
+
+
+
+
+
+
+<div class="slide">
+            <div class="question"> 4.Teams may be hindered by the presence of: </div>
+            <div class="answers"> <label>
+              <input type="radio" name="question1" value="a">
+              a :
+             Similar communication styles 
+            </label><label>
+              <input type="radio" name="question1" value="b">
+              b :
+               Mutual support 
+            </label><label>
+              <input type="radio" name="question1" value="c">
+              c :
+              An authority gradient 
+            </label>
+
+<label>
+              <input type="radio" name="question2" value="d">
+              d :
+            Situation monitoring
+            </label>
+             </div>
+          </div>
+
+
+
+<div class="slide">
+            <div class="question">5. Which is not a form of team briefing? </div>
+            <div class="answers"> <label>
+              <input type="radio" name="question1" value="a">
+              a :
+             Pre- or post-shift pauses  
+            </label><label>
+              <input type="radio" name="question1" value="b">
+              b :
+               Read-back protocols 
+            </label><label>
+              <input type="radio" name="question1" value="c">
+              c :
+              Debriefings 
+            </label>
+
+<label>
+              <input type="radio" name="question2" value="d">
+              d :
+            Huddles
+            </label>
+             </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+        </div>
+</div>
+<button id="previous" style="display: none;">Previous</button>
+<button id="next" style="display: inline-block;">Next </button>
+
+
+
+
+
+ 
+
+<button id="submit" style="display: none;">Submit </button>
+
+
+
+
+
+
+<div id="results"></div>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+
+  
+      <script id="rendered-js">
+(function () {
+  // Functions
+  function buildQuiz() {
+    // variable to store the HTML output
+    const output = [];
+
+    // for each question...
+    myQuestions.forEach(
+    (currentQuestion, questionNumber) => {
+
+      // variable to store the list of possible answers
+      const answers = [];
+
+      // and for each available answer...
+      for (letter in currentQuestion.answers) {
+
+        // ...add an HTML radio button
+        answers.push(
+        `<label>
+              <input type="radio" name="question${questionNumber}" value="${letter}">
+              ${letter} :
+              ${currentQuestion.answers[letter]}
+            </label>`);
+
+      }
+
+      // add this question and its answers to the output
+      output.push(
+      `<div class="slide">
+            <div class="question"> ${currentQuestion.question} </div>
+            <div class="answers"> ${answers.join("")} </div>
+          </div>`);
+
+    });
+
+
+    // finally combine our output list into one string of HTML and put it on the page
+    quizContainer.innerHTML = output.join('');
+  }
+
+  function showResults() {
+
+    // gather answer containers from our quiz
+    const answerContainers = quizContainer.querySelectorAll('.answers');
+
+    // keep track of user's answers
+    let numCorrect = 0;
+
+    // for each question...
+    myQuestions.forEach((currentQuestion, questionNumber) => {
+
+      // find selected answer
+      const answerContainer = answerContainers[questionNumber];
+      const selector = `input[name=question${questionNumber}]:checked`;
+      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+
+
+      // if answer is correct
+      if (userAnswer === currentQuestion.correctAnswer) {
+        // add to the number of correct answers
+        numCorrect++;
+
+        // color the answers green
+        answerContainers[questionNumber].style.color="";
+      }
+      // if answer is wrong or blank
+      else {
+          // color the answers red
+          answerContainers[questionNumber].style.color = '';
+        }
+    });
+
+
+
+    // show number of correct answers out of total
+   resultsContainer.innerHTML = `you have scored ${numCorrect} correct out of ${myQuestions.length} questions`;
+    resultsContainer.innerHTML=`${Questions}`;
+  }
+
+  function showSlide(n) {
+    slides[currentSlide].classList.remove('active-slide');
+    slides[n].classList.add('active-slide');
+    currentSlide = n;
+    if (currentSlide === 0) {
+      previousButton.style.display = 'none';
+    } else
+    {
+      previousButton.style.display = 'inline-block';
+    }
+    if (currentSlide === slides.length - 1) {
+      nextButton.style.display = 'none';
+      submitButton.style.display = 'inline-block';
+    } else
+    {
+      nextButton.style.display = 'inline-block';
+      submitButton.style.display = 'none';
+    }
+  }
+
+  function showNextSlide() {
+    showSlide(currentSlide + 1);
+  }
+
+  function showPreviousSlide() {
+    showSlide(currentSlide - 1);
+  }
+
+  // Variables
+  const quizContainer = document.getElementById('quiz');
+  const resultsContainer = document.getElementById('results');
+  const submitButton = document.getElementById('submit');
+  const myQuestions = [
+  {
+    question: "1.Teamwork requires co-operation and co-ordination. Which behaviour enables the other behaviours?",
+    answers: {
+      a: "Communication",
+      b: "Co=operation",
+      c: "Co-ordination",
+      d:"None of the above" },
+
+    correctAnswer: "a" 
+
+  },
+
+  {
+    question:"2. If team members share a mental model, then: ",
+    answers: {
+      a: " They have different perceptions of what is going on around them ",
+      b: " They have different views on what is required to manage the situation ",
+      c: " They have the same views on what is required to manage the situation ", 
+      d: " Serious safety events are more likely"},
+
+    correctAnswer: "c" },
+
+  {
+    question: "3.Which statement is false? ",
+    answers: {
+      a: " Mutual support involves trust in other team members and confidence in their actions ",
+      b: " Situation monitoring involves adjusting, adapting, and reallocating tasks and responsibilities as required ",
+      c: " Effective communication should use subjective language ",
+      d: " Leadership in effective teamwork involves communicating team roles and responsibilities" },
+
+    correctAnswer: "d" },
+
+
+
+     {
+    question: "4.Teams may be hindered by the presence of: ",
+    answers: {
+      a: "Similar communication styles ",
+      b: "Mutual support  ",
+      c: "An authority gradient ",
+      d: "Situation monitoring" },
+
+    correctAnswer: "c" },
+
+
+{
+    question: "5.Which is not a form of team briefing?  ",
+    answers: {
+      a: "Pre- or post-shift pauses  ",
+      b: "Read-back protocols  ",
+      c: "Debriefings  ",
+      d: "Huddles" },
+
+    correctAnswer: "b" }
+
+
+
+];
+
+
+
+  // Kick things off
+  buildQuiz();
+
+  // Pagination
+  const previousButton = document.getElementById("previous");
+  const nextButton = document.getElementById("next");
+  const slides = document.querySelectorAll(".slide");
+  let currentSlide = 0;
+
+  // Show the first slide
+  showSlide(currentSlide);
+
+  // Event listeners
+  submitButton.addEventListener('click', showResults);
+  previousButton.addEventListener("click", showPreviousSlide);
+  nextButton.addEventListener("click", showNextSlide);
+})();
+//# sourceURL=pen.js
+    </script>
+
+  
+
+  <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-4793b73c6332f7f14a9b6bba5d5e62748e9d1bd0b5c52d7af6376f3d1c625d7e.js"></script>
+
+
+
+ 
+</body></html>
